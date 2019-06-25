@@ -1,5 +1,18 @@
 const baseURL = 'https://api.github.com';
+<<<<<<< HEAD
 const user = 'pkim050';
+=======
+const user = '<YOUR_USERNAME>';
+const token = '59d708a0cb08dbd2faedb0d507890d9c4804de2a';
+
+fetch('https://api.github.com/user/repos', {
+  headers: {
+    Authorization: `token ${token}`
+  }
+})
+  .then(res => res.json())
+  .then(json => console.log(json));
+>>>>>>> 63ddcad62f1bff5c44f085eda448ff1ae4d824e9
 
 function getToken() {
   //change to your token to run in browser, but set
@@ -13,11 +26,19 @@ function forkRepo() {
   fetch(`${baseURL}/repos/${repo}/forks`, {
     method: 'POST',
     headers: {
+<<<<<<< HEAD
       Authorization: `token ${getToken()}`
     }
   })
   .then(res => res.json())
   .then(json => showResults(json))
+=======
+      Authorization: `token ${token}`;
+    }
+  })
+  .then(response => response.json())
+  .then(json => console.log(json))
+>>>>>>> 63ddcad62f1bff5c44f085eda448ff1ae4d824e9
 }
 
 function showResults(json) {
